@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Input from "./input/Input"
 
           function App() {
 
@@ -30,15 +31,7 @@ import { useState } from "react"
                 <h1>Gerador de senhas</h1>
                 <div>
                   <label htmlFor="passwordSize">Tamanho:</label>
-                  <input 
-                  type="number" 
-                  name="" 
-                  id="passwordSize" 
-                  min={4} 
-                  max={50}
-                  value={passwordSize} 
-                  onChange={(ev) => setPasswordSize(ev.target.value)}
-                  />
+                  <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize}/>
                 </div>
                 <button onClick={generate}>Gerar senha de {passwordSize} caracteres</button>
                 <button onClick={copyToClipboard}>{copy}</button>
